@@ -1,0 +1,158 @@
+html {
+	height : 100%;
+}
+
+body {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	padding-top: 80px;
+	height : 100%;
+}
+
+.semi-transparent {
+	opacity : .95;
+}
+
+/* Wrapper for sticky footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+  z-index : 1600;
+}
+
+span[contenteditable=true] {
+	background-color: rgb(240,240,240);
+	border-color: 1px solid lightgray;
+	padding: 4px;
+	border-radius: 2px;
+}
+
+.splash {
+		background : url("../images/splash3.jpg") no-repeat center center fixed;		
+}
+
+.admin {
+	background : url("../images/splash4.jpg") no-repeat center center fixed;
+}
+
+.about {
+	background : url("../images/about1.jpg") no-repeat center center fixed;
+}
+
+.contact {
+	background : url("../images/contact1.jpg") no-repeat center center fixed;
+}
+
+.home {
+	background : url("../images/home2.jpg") no-repeat center center fixed;
+}
+
+.container {
+	min-height : 75%;
+}
+
+.view-container {
+	background-color: white;
+	padding: 2em;
+	border-radius: 1em;	
+	height: 100%;
+	margin-bottom: 1em;
+}
+
+#login {
+	border: 1px solid lightgray;
+	background-color: #e0edfc;
+	margin : 1em;
+	padding: 1em;
+	border-radius: .5em;
+}
+
+#searchclear {
+	position: absolute;
+	right: 5px;
+	top: 0;
+	bottom: 0;
+	height: 14px;
+	margin: auto;
+	font-size: 14px;
+	cursor: pointer;
+	color: #ccc;
+}
+
+.indented {
+	padding-left: 3em;
+}
+
+h2 small {
+	color: rgba(40, 40, 150, .7);
+	font-style: italic;
+}
+
+.masthead {
+	background-color: #428bca;
+	margin-bottom: .5em;
+}
+
+.tab:hover, .tab:focus {
+	color: #fff;
+	text-decoration: none;
+}
+
+.tab.active {
+	color: #fff;
+	font-weight: bold;
+}
+
+.search-field {
+	margin-bottom: .5em;
+}
+
+.tab-bar .active:after {
+	//position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -5px;
+	vertical-align: middle;
+	content: " ";
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid;
+	border-left: 5px solid transparent;
+}
+
+.back-link {
+	cursor: pointer;
+	color: #428bca;
+	font-weight:bold;
+}
+
+.next-link {
+	color: #cdddeb;
+	font-weight:bold;
+}
+
+.down {
+	top: 8px;
+}
+
+.boxed-text {
+	margin-bottom: .5em;
+	margin-right: .5em;
+}
+
+.footer {
+	height: 60px;
+	text-align: center;
+	background-color: #f9f9f9;
+	border-top: 1px solid #e5e5e5;
+	padding-top: 1em;
+}
+
+.modal-backdrop {
+}
+
+#recipe-list {
+	margin-top: 2em;
+}

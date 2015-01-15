@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="modal-header">
+		<h3>Create User</h3>
+	</div>
+	<div class="modal-body">
+		<form name="newUserForm">
+			<div class="form-group" ng-class="{'has-error' : newUserForm.firstName.$invalid && newUserForm.firstName.$dirty}">
+				<label class="control-label" for="firstName">First Name <span ng-show="newUserForm.firstName.$invalid && newUserForm.firstName.$dirty"
+					class="glyphicon glyphicon-asterisk"> </span>
+				</label> <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First name" ng-model="newUser.firstName" required>
+			</div>
+			<div class="form-group" ng-class="{'has-error' : newUserForm.lastName.$invalid && newUserForm.lastName.$dirty}">
+				<label for="lastName">Last Name <span ng-show="newUserForm.firstName.$invalid && newUserForm.firstName.$dirty" class="glyphicon glyphicon-asterisk">
+				</span>
+				</label> <input type="text" name="lastName" class="form-control" placeholder="Last name" ng-model="newUser.lastName" required>
+			</div>
+			<div class="form-group" ng-class="{'has-error' : newUserForm.userName.$invalid && newUserForm.userName.$dirty}">
+				<label for="userName">Username <span ng-show="newUserForm.firstName.$invalid && newUserForm.firstName.$dirty" class="glyphicon glyphicon-asterisk">
+				</span>
+				</label> <input type="text" name="userName" class="form-control" placeholder="Username" ng-model="newUser.userName" required>
+			</div>
+			<div class="form-group" ng-class="{'has-error' : newUserForm.email.$invalid && newUserForm.email.$dirty}">
+				<label for="email">Email <span ng-show="newUserForm.firstName.$invalid && newUserForm.firstName.$dirty" class="glyphicon glyphicon-asterisk">
+				</span>
+				</label> <input type="text" name="email" class="form-control" placeholder="email" ng-model="newUser.email" required>
+			</div>
+			<div class="form-group">
+				<label>Role</label>
+				<div class="checkbox">
+					<label for="admin"> 
+						<input type="checkbox" name="admin" ng-model="newUserForm.admin"> Administrator 
+						<span ng-show="newUserForm.firstName.$invalid && newUserForm.firstName.$dirty" class="glyphicon glyphicon-asterisk">
+						</span>
+					</label>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+		<button class="btn btn-primary" data-ng-click="ok()" ng-class="{disabled : !validate()}">Create</button>
+	</div>
+</div>

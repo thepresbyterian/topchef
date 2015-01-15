@@ -1,0 +1,83 @@
+<div id="recipe-detail" class="view-container semi-transparent">
+	<div class="pull-right" ng-click="edit = !edit">
+		<span ng-if="!edit" class="btn btn-default btn-sm"><span
+			class="glyphicon glyphicon-pencil"></span></span> <span ng-if="edit"
+			class="btn btn-success btn-sm"><span
+			class="glyphicon glyphicon-ok"></span></span>
+	</div>
+	<div class="pull-right">
+		<a class="btn btn-default btn-sm" back-button><span
+			class="glyphicon glyphicon-chevron-left"></span></a>
+	</div>
+
+	<h1>{{recipe.title}}</h1>
+
+	<h3>Ingredients</h3>
+	<form class="form-inline" role="form" action="" ng-show="edit">
+		<div class="form-group">
+			<div class="input-group">
+				<input type="text" class="form-control" id="ingredient"
+					placeholder="ingredient" ng-model="ingredient">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="input-group">
+				<input type="text" class="form-control" id="quantity"
+					placeholder="amount" ng-model="quantity">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="input-group">
+				<select class="form-control" ng-model="selectedUnit"
+					ng-options="unit.id as unit.name for unit in units">
+					<!--   <option ng-repeat="unit in units" class="">{{unit.name}}</option>-->
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<button class="btn btn-primary" type="button"
+				ng-click="addIngredient()">Add Ingredient</button>
+		</div>
+	</form>
+	<hr>
+	<div class="well">
+		<table>
+			<tr ng-repeat="ingredient in recipe.ingredients">
+				<td><button type="button" ng-show="edit"
+						ng-click="deleteIngredient(ingredient.id)"
+						class="btn btn-xs btn-danger">
+						<span class="glyphicon glyphicon-trash"
+							style="vertical-align: center;"></span>
+					</button></td>
+				<!-- 				<td><span class="deleter" ng-click="deleteIngredient(ingredient.id)" ng-show="edit">&#215;</span></td>			 -->
+				<td><span style="margin-left: 1em;">{{ingredient.description}}</span><span
+					ng-if="!ingredient.units">s</span></td>
+				<td>{{ingredient.quantity}} {{ingredient.units.name}}<span
+					ng-if="ingredient.quantity != 1 && ingredient.units">s</span></td>
+			</tr>
+		</table>
+	</div>
+
+	<h3>Steps</h3>
+	<form class="form-inline" role="form" action="" ng-show="edit">
+		<textarea class="form-control" id="steptext" rows="4"
+			ng-model="stepText"></textarea>
+		<button class="btn btn-primary" type="button" ng-click="addStep()"
+			style="margin-top: .5em;">Add Step</button>
+	</form>
+	<hr>
+	<div class="well">
+		<ol>
+			<li ng-repeat="step in recipe.steps">
+				<button type="button" ng-show="edit"
+					ng-click="deleteStep(step.number)" class="btn btn-xs btn-danger">
+					<span class="glyphicon glyphicon-trash"
+						style="vertical-align: center;"></span>
+				</button> {{step.description}}
+			</li>
+		</ol>
+	</div>
+</div>

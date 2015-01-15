@@ -1,0 +1,43 @@
+buildscript {
+	ext {
+		springBootVersion = '1.1.8.RELEASE'
+	}
+    repositories {
+    	mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+war {
+	baseName='topchef'
+	version=''
+}
+
+configurations {
+  providedRuntime
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb:${springBootVersion}")
+    compile("org.springframework.boot:spring-boot-starter-data-rest:${springBootVersion}")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")    
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}

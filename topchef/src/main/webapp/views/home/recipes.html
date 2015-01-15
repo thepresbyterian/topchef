@@ -1,0 +1,36 @@
+<div class="view-container semi-transparent">
+		<div class="pull-right" ng-click="edit = !edit">
+			<span ng-if="!edit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-pencil"></span></span>
+			<span ng-if="edit" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok"></span></span>	
+		</div>
+
+
+	<div class="page-header">
+		<h1>
+			Recipes</span>
+		</h1>
+	</div>
+
+	<form class="form-inline" role="form" action="">
+		<div class="input-group">
+			<input type="text" class="form-control" id="rname" placeholder="recipe name" ng-model="recipeTitle"> 
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="button" ng-click="addRecipe()">Add recipe</button>
+				</span>
+		</div>
+	</form>
+
+
+	<div class="list-group" id="recipe-list">
+		<div class="list-group-item" ng-repeat="recipe in recipes">
+			<div>
+				<button type="button" ng-show="edit" ng-click="deleteRecipe(recipe.id)" class="btn btn-xs btn-danger">
+					<span class="glyphicon glyphicon-trash" style="vertical-align:center;"></span>
+				</button>
+				<a href="#users/{{userId}}/recipes/{{recipe.id}}">{{recipe.title}} </a>
+			</div>
+		</div>
+	</div>
+
+
+</div>

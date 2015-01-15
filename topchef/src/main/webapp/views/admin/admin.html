@@ -1,0 +1,44 @@
+<div class="view-container semi-transparent">
+	<div class="pull-right" ng-click="addUser()">
+		<span class="btn btn-default btn-sm">
+			<span class="glyphicon glyphicon-plus"></span>
+		</span> 
+	</div>
+
+	<div class="page-header">
+		<h1>
+			Users
+		</h1>
+	</div>
+
+	<table class="table table-condensed">
+		<thead>
+			<th>Last</th>
+			<th>First</th>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Admin</th>
+			<th>Enabled</th>
+			<th></th>
+		</thead>
+		<tbody ng-repeat="user in users">
+			<tr>
+				<td>{{user.lastName}}</td>
+				<td>{{user.firstName}}</td>
+				<td>{{user.userName}}</td>
+				<td>
+					
+<!-- 					<div class="input-group input-group-sm" > -->
+						<!--  <span contenteditable="true" ng-model="user.email" strip-br="true" ng-blur="update(user)"></span> -->
+						<input style="width:100%;margin-right:1em;" ng-model="user.email" ng-blur="update(user)" >
+						<!--  <span class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span> -->
+<!-- 					</div> -->
+					
+				</td>		
+				<td><input type="checkbox" ng-init="isAdmin = adminInRoles(user)" ng-model="isAdmin" ng-change="setAdmin(user, isAdmin)"></td>
+				<td><input type="checkbox" ng-model="user.isEnabled" ng-change="update(user)"></td>	
+				<td><span class="btn btn-sm btn-default glyphicon glyphicon-remove" ng-click="deleteUser(user)"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
